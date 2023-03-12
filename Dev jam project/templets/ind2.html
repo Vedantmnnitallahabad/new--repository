@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">   <!--width will be equal to the device width-->
+        <link rel="stylesheet" href="{%static 'style.css' %}">
+        <title>AAdhunik
+
+        </title>
+    </head>
+    <body>
+        <header>
+            <h1>AADHUNIK</h1>
+        </header> <br>
+        <br><br><br><br><br><br>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="home".html><h5>Home</h5></a></li>
+                <li><a href="aboutus.html"><h5>About Us</h5></a></li>
+                <li><a href="contact.html"><h5>Contact</h5></a></li>
+                <li><a href="accounts/register"><h5>Get Started</h5></a></li>
+                <li><a href="accounts/login"><h5>Login</h5></a></li>
+            </ul>
+        </nav>
+                                     
+        <section class="banner">                <!-- we have given the a class to the <section> tag so that later we can use css to style it-->
+         <img src= "{%static '/images/backkk.png' %}"  alt="aadhunik banner">
+            <DIV class="welcome">
+                <span class="design"><h1>Write <br>Review</h1><br><br></span>
+                <h2>Your FEEDBACK and REVIEW<br><span>Important to us</span></h2><!-- <span> is used to make only one part of the line highlight-->
+            </DIV>
+
+
+        </section>                                <!-- <section> is another type of semantic tag --> 
+    <main>                                            <!--it is the main content of the page and include -->
+        <article> 
+            <h2>It's Us!</h2>
+          <p>
+                WELCOME TO AAdhunik. This is a review website where user can give review and suggestions about different locations according to their
+                experience and security there. These reviews are available on our site and anyone can get access to it.<br>
+                
+                WELCOME TO AAdhunik. This is a review website where user can give review and suggestions about different locations according to their
+                experience and security there. These reviews are available on our site and anyone can get access to it.<br>
+                WELCOME TO AAdhunik. This is a review website where user can give review and suggestions about different locations according to their
+                experience and security there. These reviews are available on our site and anyone can get access to it.
+            </p><br>
+        </article>                                     
+    </main>
+    </body>
+</html>
+
+
+<!-- we use different classes to make our styling work easy as we can easily differentiate between the content-->
