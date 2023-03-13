@@ -1,0 +1,75 @@
+header{
+    top: 0;
+    left: 0;
+    background-color: #0cc;
+    padding: 10px;
+    text-align:left;
+    position: fixed;
+    width: 100%;                               /*till now our header would come behind and will not be seen. To make it come forward we use Z index  positive value 
+                                                makes it come forward and negative makes it go backward*/
+    z-index: 1;
+}
+header h1{
+    color: black;
+    border: 8px solid white;
+    padding: 6px 12px;
+    display: inline-block;                         /*display in line block minimises the block around mario club*/
+    border-radius: 30px;                           /* border radius makes the box curve*/
+}
+.banner{
+    position: relative;
+}
+nav{                           /*styling the navigation part*/
+    background-color: #f4f4f4;
+    padding: 1px;
+    position: sticky;                   /*sricky is mix of fixed and relative*/
+    top: 15px;
+}
+nav li{
+   width: 25%;
+   display: inline-block;
+   font-size: 20px;                    /* in this the last li tag comes in next line. To stop this we use <nowrap> in <ul> tag so that all comes in one line*/ 
+   
+}
+nav ul{
+   white-space: nowrap;
+   max-width: 1200px;
+   margin: 0 auto;
+
+}
+.banner img{
+    display: -webkit-box;
+    margin-left: auto;
+}
+.banner .welcome{
+    position: absolute;     /*by doing absolute it loses its position and then we can fix it any where else using left and right option*/
+    color: #0d588a;
+    padding: 40px;
+    left:5px;
+    top: 20%;             /*use percent value rather than px so that it can reposition itself when we minnimize or maximize the page*/
+}
+.banner h2{
+    font-size: 32px;
+    font-family: cursive;
+}
+.banner h2 span{
+    font-size: 1.6em;   /*em  compares with the original font size and emphasize it*/
+}
+main{
+    max-width: 100%;
+    width: 1200px;
+    margin: 80px auto;
+    padding: 0 40px ;
+    box-sizing: border-box;
+}
+article h2{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #f63232;
+    font-size: 48px;
+}
+article p{
+    line-height: 3em;
+    color: #4b4b4b;
+
+}
