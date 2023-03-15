@@ -12,7 +12,7 @@ def login(request):
 
     if user is not None:
       auth.login(request,user)
-      return redirect("review")
+      return redirect("submitreview")
     else:
       messages.info(request,'invalid crediantials')
       return redirect('login')
