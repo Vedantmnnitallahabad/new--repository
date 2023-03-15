@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>see review</title>
+</head>
+<body>
+    <h1>see reviews here</h1>
+     <br>
+     <div class="row row-cols-3">
+        {% for review in reviews.all %}
+        <div class="card" style="width: 18rem;">
+            <h3 calss="card-title">User:{{review.author}}</h3>
+            
+           <div class="card-body">
+               <h5 calss="card-title">Location:{{review.title}}</h5>
+               <p class="card-text">Review:{{review.body|truncatewords:30}}</p>
+               <p class="card-text">Rating:{{review.criticR}}</p>
+               <a href="{% url 'locationreview' review.id %}" class="btn btn-primary">Read review</a>
+           </div>
+        </div>
+        {% endfor %}
+
+     </div>
+     
+</body>
+</html>
