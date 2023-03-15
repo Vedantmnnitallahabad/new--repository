@@ -9,11 +9,24 @@
 <body>
    <form action="login" method="post">
       {% csrf_token %}
-     Username: <input type="text" name="username" placeholder="Username"><br>
-       Password: <input type="password" name="password" placeholder="Password"><br>
-      <input type="submit">
-
-
+      <br>
+      <div>
+        <img src=C:\Users\ushan\Desktop\logsign\login.jpg> 
+        <h1>Hello,
+          Welcome back
+        </h1>
+       <span>Here you can login</span>
+       <br>
+  
+      <div class="container">
+        <p align="center"> Username:
+            <br> <input type="text" name="username" placeholder="Username"></p><br>
+            <p align="center">Password: 
+            <br><input type="password" name="password" placeholder="Password"></p><br>
+            <p align="center"><input type="submit" value="login"></p>
+            <br>
+            <p> Doesnt have an account ?</p> <a href="">sign up</a>
+        </div>
    </form>
     
    <div>
