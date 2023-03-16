@@ -5,10 +5,19 @@ from .forms import ReviewForm
 def index(request):
     
     return render (request, "ind2.html")
+
+def about(request):
+   return render (request, "about.html")
    
 def review(request):
-   reviews=Reviews.objects
-   return render (request, "seereview.html", {'reviews':reviews})
+  reviews=Reviews.objects
+  if request.method=="GET":
+  
+   st=request.GET.get('searchname')
+   if st!=None:
+      reviews=Reviews.objects.filter(title__icontains=st)
+  
+  return render (request, "seereview.html", {'reviews':reviews})
 
 def locationreview(request, review_id):
    
@@ -36,8 +45,11 @@ def submitreview(request):
          review.save()
          print('form submitted')
 
-         return redirect ("review")
+         return render (request,'logout.html')
       
       else:
          form = ReviewForm()
    return render(request,'review.html', {'form':form})
+
+
+
