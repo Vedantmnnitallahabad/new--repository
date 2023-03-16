@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentsss</title>
+    <style>
+      
+      .container{
+            border-width: 2px;
+            border-style: solid;
+            border-color: black;
+            width: 300px;
+            
+      }
+        
+        
+    </style>
+</head>
+<body>
+   <form action="login" method="post">
+      {% csrf_token %}
+      <br>
+      <div>
+      <h1>Hello,
+        Welcome back
+      </h1>
+     <span>Here you can login</span>
+     <br>
+
+    <div class="container">
+    <p align="center">Username:
+      <br><input type="text" name="username" placeholder="Username"> </p>
+    <br>
+
+    <p align="center">Password:
+       <br ><input type="password" name="password" placeholder="Password"> </p>
+        <br>
+ <p align="center"><input type="submit" value="login"></p>
+<br>
+  <p> Doesnt have an account ?</p> <a href="">sign up</a>
+      </div>
+      <img src="C:\Users\DELL\login.jpg"> 
+      
+
+
+     
+
+
+
+   </form>
+    
+   <div>
+    {% for message in messages %}
+      
+    <h3> {{message}} </h3>
+
+    {% endfor %}
+</div>
+
+
+</body>
+</html>
