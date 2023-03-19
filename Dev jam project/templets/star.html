@@ -16,7 +16,41 @@
         box-sizing: border-box;
         font-family: 'Times New Roman', Times, serif;
       }
-      
+      body{
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(45deg,#d2001a,#7462ff,#f48e21,#23d5ab);
+        background-size: 300% 300%;
+        animation: color 12s ease-in-out infinite;
+
+        
+      }
+        @keyframes color {
+          0% {background-position: 0 50%;
+          }
+          50%{ background-position: 100% 50%;
+
+          }
+          
+          100% {background-position :0 50%;
+          }
+
+        }
+        a:link, a:visited {
+            background-color:rgba(250,100,0,0.8) ;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 100px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+          }
+          
+          a:hover, a:active{
+            background-color:rgba(239, 103, 13, 0.8);
+  
+          
+          }
           input#submit{
             width: 200px;
             padding: 7px;
@@ -31,9 +65,16 @@
             box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
             margin-bottom: 20px;
             border-radius: 15px;
-        }</style>
+        }
+        .error{
+            color: white;
+        } .ash{
+            color: white;
+        }
+        
+        </style>
        
-    <h1><p align="center">GIVE YOUR FEEDBACKS FOR OUR WEBSITE HERE</p></h1>
+    <h1 class="error"><p align="center">Kindly provide your valuable feedback !!! 😊</p></h1>
    
     <form method="POST" action="{% url 'submitfeedback' %}" enctype="multipart/form.data" class="form">
         {%csrf_token %}
@@ -56,8 +97,8 @@
             <span class="result"></span>
              
         </div><br><br>
-        <p align="center">Please provide your valuable suggestions .</p>
-        <p align="center"> Write Feedback:<br><br> <textarea name="body" cols="30" rows="10"></textarea></p><br><br>
+        <h3 class="ash"><p align="center"><strong>Please provide your valuable suggestions or report an user by mentioning his/her <em>username</em></strong>.</p></h3><br>
+        <p align="center"> <br> <textarea name="body" cols="30" rows="10"></textarea></p><br><br>
        <p align="center"><input type="submit" value="Submit" id="submit"></p><br><br>
         <p align="center"><a href="/"><strong>HOME</strong></a></p>
     </div>
