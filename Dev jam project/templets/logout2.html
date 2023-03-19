@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout</title>
+    
+    
+    <style>
+        a:link, a:visited {
+          background-color: #f44336;
+          color: white;
+          padding: 14px 25px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+        }
+        
+        a:hover, a:active {
+          background-color:red;
+        }
+        .error{
+  
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width:50%;
+            }
+        </style>
+</head>
+<body>
+    <img src="{% static '/images/n2.jpg' %}" class="error">
+<h1> <p align="center">Thanks for your review visit us again !!!</p> </h1>
+<h2><p align="center">We pursuit towards making a <em>better</em> and <em> safer </em> <strong>tomorrow .</strong></p></h2>
+<br><br><br>
+
+ <h4><p align="center"><a href="review">To go to location review page click here</a></p></h4><br>
+<h4><p align="center">OTHERWISE</p></h4>
+<h4><p align="center"><a href="accounts/logout">LOGOUT</a></p></h4>
+
+
+</body>
+</html>

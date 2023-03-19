@@ -7,32 +7,47 @@
         <link rel="stylesheet" href="{% static 'style3.css' %}">
     </head>
 <body>
-    <br><br><br>
+    <style>
+        a:link, a:visited {
+          background-color: #f44336;
+          color: white;
+          padding: 10px 15px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+        }
+        
+        a:hover, a:active {
+          background-color:red;
+        }
+        </style>
+    <p align="right"><a href="/"><strong>HOME</strong></a></p>
+    
+    
     <div class="main">
     <div class="container">
+        {% for message in messages %}
+              
+    <h1 align="center">{{message}}!!!</h1>
+    
+    {% endfor %}
+
         <form action="login" method="post" class="form">
             {% csrf_token %}
             <br><br>
             <br>
-            <h1>Log In</h1><br><br>
-            <input type="username" name="username" class="box1" placeholder="Enter username" required>  
+            <h1 align="center">Log In</h1><br>
+            <p align="center"><input type="username" name="username" class="box1" placeholder="Enter username" required></p>  
             <br>
+            <p align="center"><input type="password" name="password" class="box2" placeholder="Enter Password" required></p>
             <br>
-
-            <input type="password" name="password" class="box2" placeholder="Enter Password" required>
-            <br><br>
-            <input type="submit" value="Log In" id="submit">
+            <p align="center"><input type="submit" value="Log In" id="submit"></p>
+            <p align="center">Do Not have a account?     <a href="register">Sign Up</a></p>
             <BR><br>    
-            <p class="hi">THANK YOU!!!</p>
+            
         </form>
-        <div>
-            {% for message in messages %}
-              
-            <h3> {{message}} </h3>
-            
-            {% endfor %}
-        </div>
-            
-        <a href="/">HOME</a>           
+        <div>  
+        </div>          
+               
 </body>
 </html>

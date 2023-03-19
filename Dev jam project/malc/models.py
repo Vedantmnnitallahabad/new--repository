@@ -12,3 +12,12 @@ class Reviews(models.Model):
     body = models.TextField()
     criticR = models.IntegerField(validators=[MaxValueValidator(10), MinValueValidator(1)])
 
+class Feedbacks(models.Model):
+    author=models.ForeignKey(User,default=None,on_delete=models.CASCADE)
+    body = models.TextField()
+    rate= models.IntegerField(default=0)
+    
+    def _str_(self):
+        return str(self.id)
+    
+

@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from  .models import Reviews
-from .forms import ReviewForm
+from .forms import ReviewForm,FeedbackForm
 # Create your views here.
 def index(request):
     
@@ -27,7 +27,7 @@ def locationreview(request, review_id):
    author = review.author
    body = review.body
    image= review.image
-
+    
    context={'review':review,'title':title,'author':author,'body':body,'image':image}
    return render(request,"locationreview.html",context)
 
@@ -36,6 +36,8 @@ def locationreview(request, review_id):
 
 
 def submitreview(request):
+   
+   
    form = ReviewForm()
    if request.method == 'POST':
       form = ReviewForm(request.POST,request.FILES)
@@ -45,11 +47,34 @@ def submitreview(request):
          review.save()
          print('form submitted')
 
-         return render (request,'logout.html')
+         return render (request,'logout2.html')
       
       else:
+         
          form = ReviewForm()
-   return render(request,'review.html', {'form':form})
+        
+   return render(request,'review.html',{'form':form})
 
 
+def submitfeedback(request):
+   
+   
+   form = FeedbackForm()
+   if request.method == 'POST':
+      form = FeedbackForm(request.POST,request.FILES)
+      if form.is_valid():
+         feedback = form.save(commit=False)
+         feedback.author = request.user
+         feedback.save()
+         print('form submitted')
 
+         return render (request,'logout2.html')
+      
+      else:
+         
+         form = FeedbackForm()
+        
+   return render(request,'star.html',{'form':form})
+
+def loginpage(request):
+   return render(request,'login.html')

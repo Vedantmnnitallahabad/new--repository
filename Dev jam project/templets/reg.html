@@ -7,10 +7,30 @@
         <link rel="stylesheet" href="{% static 'style2.css' %}">
     </head>
     <body>
+        <style>
+            a:link, a:visited {
+              background-color: #f44336;
+              color: white;
+              padding: 10px 10px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+            }
+            
+            a:hover, a:active {
+              background-color:red;
+            }
+            </style>
+      <p align="right"><a href="/"><strong>HOME</strong></a></p> 
         <div class="main">
 
         <div class="register">
             <h2>WELCOME!!</h2>
+            {% for message in messages %}
+                  
+            <h1 align="center">{{message}}!!!</h1>
+    
+            {% endfor %}
             <form id="register" method="post">
                 {% csrf_token %}
                 <label>Name:</label><br>
@@ -30,15 +50,11 @@
                 <br><br>
                 <input type="password" name="password2" class="box2" placeholder="Confirm Password" required>
                 <br><br>
-                <input type="submit" value="Sign In" id="submit">
+                <input type="submit" value="Sign Up" id="submit">
             </form>
             <div>
-                {% for message in messages %}
-                  
-                <h3> {{message}}          </h3>
-        
-                {% endfor %}
+               
             </div>
-            <a href="/"><strong><h1>HOME</h1></strong></a>
+            
     </body>
 </html>
