@@ -6,12 +6,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <a href="/">HOME</a>
+    <style>
+      a:link, a:visited {
+        background-color: #f44336;
+        color: white;
+        padding: 10px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+      }
+      
+      a:hover, a:active {
+        background-color:red;
+      }
+      </style>
+    <p align="right"><a href="/" >HOME</a></p>
     <title>see review</title>
 </head>
 <body>
-    <div class="container" style="margin-top:30px;">
-      <div class="row" style="margin-top:30px;">
+  <h1><p align="center">REVIEWS</p></h1>
+    <div class="container" style="margin-top:25px;" align="center" >
+      <div class="row" style="margin-top:25px;">
         <div class="col-xl-12">
            <form action="" method="GET" class="form-inline">
               <input type="text" class="form-control" name="searchname" placeholder="Enter the name of location">
@@ -28,21 +43,19 @@
 
 
 
-    <h1>see reviews here</h1>
+    
      <br>
      <div class="row row-cols-3">
+      
         {% for review in reviews.all %}
-        <div class="card" style="width: 18rem;">
-            
-            <h2 calss="card-title">Location:{{review.title}}</h2>
-            
-           <div class="card-body">
-            <h3 calss="card-title">User:{{review.author}}</h3>
-               <p class="card-text">Review:{{review.body|truncatewords:30}}</p>
-               <p class="card-text">Rating:{{review.criticR}}</p>
-               <a href="{% url 'locationreview' review.id %}" class="btn btn-primary">Read review</a>
-           </div>
-        </div>
+        <div class="card-body">
+         <h5 class="card-title">User:{{review.author}}</h5>
+         <h5 class="card-title">Location:{{review.title}}</h5>
+         <p class="card-text">Review:{{review.body|truncatewords:30}}</p>
+         <p class="card-text">Rating:{{review.criticR}}</p>
+         <a href="{% url 'locationreview' review.id %}" class="btn btn-primary">Read review</a>
+       </div>
+     </div>
         {% empty %}
         <span class="text-center text-danger"><h1>No Record Found</h1></span>
         {% endfor %}

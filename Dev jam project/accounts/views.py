@@ -12,9 +12,9 @@ def login(request):
 
     if user is not None:
       auth.login(request,user)
-      return redirect("submitreview")
+      return redirect('loginpage')
     else:
-      messages.info(request,'invalid crediantials')
+      messages.info(request,'Invalid Crediantials')
       return redirect('login')
  else:
     return render(request,'log.html')
@@ -41,7 +41,7 @@ def register(request):
           return redirect('register')
       
       elif User.objects.filter(email=email).exists():    
-          messages.info(request,'email Taken')
+          messages.info(request,'Email Taken')
           return redirect('register')
       
       else:    
@@ -52,7 +52,7 @@ def register(request):
     
  
     else:
-      messages.info(request,'Password not matching')
+      messages.info(request,'Password Not Matching')
       return redirect('register')
     
     return redirect('/')
