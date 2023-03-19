@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,20 +7,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aadhunik</title>
-    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="{%static 'nav.css' %}">
 </head>
 
 <body>
     <header>
         <nav>
             <div class="logo">
-                <p>AAdhunik</p>
+                <p>Nari Seva</p>
             </div>
             <ul>
-                <li><a href="#">get started</a></li>
-                <li><a href="#">give review</a></li>
-                <li><a href="#">view location reviews</a></li>
-                <li><a href="#">about us </a></li>
+                <li><a href="/accounts/register">get started</a></li>
+                <li><a href="/accounts/login">login</a></li>
+                <li><a href="about">about us </a></li>
                 <li>
                     <form action="" class="container">
                         <input type="text" placeholder="search" name="q" class="search">
@@ -33,7 +33,7 @@
         <div class="area">
             <div class="banner">
                 <div>
-                    <img src="img/women.jpeg" class="shift">
+                    <img src="{% static '/images/women.jpeg'  %}" class="shift">
                 </div>
                 <div class="content">
                     <h1>WomenSecurity...</h1>
