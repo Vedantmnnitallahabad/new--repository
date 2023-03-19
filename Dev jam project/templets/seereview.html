@@ -95,11 +95,12 @@
       
         <h1>{% for review in reviews.all %}</h1>
         <div class="card-body">
-         <h5 class="card-title">Username:{{review.author}}</h5>
-         <h5 class="card-title">Location:{{review.title}}</h5>
-         <p class="card-text">Review:{{review.body|truncatewords:30}}</p>
-         <p class="card-text">Rating:{{review.criticR}}</p>
-         <a href="{% url 'locationreview' review.id %}" class="btn btn-primary">Read review</a>
+          <h2 class="card-title">Location:{{review.title}}</h2><br>
+         <h3 class="card-title">Username:{{review.author}}</h3><br><br>
+         
+         <p class="card-text">Review: {{review.body|truncatewords:30}}</p><br>
+         <p class="card-text">Rating: {{review.criticR}}</p>
+         <a href="{% url 'locationreview' review.id %}" class="btn btn-primary">Read review</a><br><br><br>
        </div>
      </div>
         <h1>{% empty %}</h1>
