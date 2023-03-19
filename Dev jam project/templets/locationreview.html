@@ -1,33 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-    {% load static %}
+   <h1 class="error">{% load static %}</h1>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>see Review</title>
+    <style>
+        * {
+        margin:0%;
+        padding:0%;
+        box-sizing: border-box;
+        font-family: 'Times New Roman', Times, serif;
+      }
+      body{
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(45deg,#d2001a,#7462ff,#f48e21,#23d5ab);
+        background-size: 300% 300%;
+        animation: color 12s ease-in-out infinite;
+
+        
+      }
+        @keyframes color {
+          0% {background-position: 0 50%;
+          }
+          50%{ background-position: 100% 50%;
+
+          }
+          
+          100% {background-position :0 50%;
+          }
+          
+            
+          }
+          #container{
+            color: white;
+          }
+          .error{
+            color: white;
+          }
+    </style>
 </head>
 <body>
-    <style>
-        a:link, a:visited {
-          background-color: #f44336;
-          color: white;
-          padding: 14px 25px;
-          text-align: center;
-          text-decoration: none;
-          display: inline-block;
-        }
-        
-        a:hover, a:active {
-          background-color:red;
-        }
-        </style>
     <br>
     <br>
+    <div id="container">
 
-    <h1>Location:{{review.title}}</h1>
+        <h1>Location:{{review.title}}</h1>
     <p>Review:{{review.body}}</p>
     <p>Rating:{{review.criticR}}</p>   
     <a href="/review"> RETURN </a>
+    </div>
+
 </body>
 </html>
